@@ -36,8 +36,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 40px;
-  padding-top: 50px;
+  gap: 2.5rem;
+  padding-top: 3.125rem;
   background-color: #c5e4e7;
 }
 
@@ -50,7 +50,7 @@ header {
   gap: 0;
 }
 header img {
-  width: 87px;
+  width: 5.4375rem;
 }
 
 main {
@@ -70,18 +70,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  gap: 32px;
+  gap: 2rem;
   background-color: #ffffff;
-  padding: 32px 24px;
-  border-radius: 25px 25px 0 0;
+  padding: 2rem 1.5rem;
+  border-radius: 1.5625rem 1.5625rem 0 0;
   color: inherit;
   font-feature-settings: "liga" off, "clig" off;
-  /* Text Preset 5 - Space Mono Bold - 16px - 24px Line Height - 0px Line Spacing */
+  /* Text Preset 5 - Space Mono Bold - rem(16px) - rem(24px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 150% */
+  line-height: 1.5rem; /* 150% */
   color: #5e7a7d;
 }
 .calculator__controls {
@@ -89,40 +89,40 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 32px;
-  padding: 0 8px;
+  gap: 2rem;
+  padding: 0 0.5rem;
 }
 .calculator__tip-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 1rem;
 }
 .calculator__results {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  gap: 32px;
-  padding: 24px;
+  gap: 2rem;
+  padding: 1.5rem;
   color: #ffffff;
   background-color: #00474b;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
 }
 .calculator__reset-btn {
   background-color: #26c2ae;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   color: inherit;
   font-feature-settings: "liga" off, "clig" off;
-  /* Text Preset 4 - Space Mono Bold - 20px - 30px Line Height - 0px Line Spacing */
+  /* Text Preset 4 - Space Mono Bold - rem(20px) - rem(30px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 30px; /* 150% */
+  line-height: 1.875rem; /* 150% */
   color: #00474b;
   border: 0;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
 }
 .calculator__reset-btn:disabled {
   background-color: #0d686d;
@@ -140,22 +140,22 @@ main {
   justify-content: flex-start;
   align-items: stretch;
   gap: 0;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 input[type=number] {
   background-color: #f3f9fa;
-  padding: 6px 16px;
+  padding: 0.375rem 1rem;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   color: inherit;
   font-feature-settings: "liga" off, "clig" off;
-  /* Text Preset 3 - Space Mono Bold - 24px - 36px Line Height - 0px Line Spacing */
+  /* Text Preset 3 - Space Mono Bold - rem(24px) - rem(36px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 36px; /* 150% */
+  line-height: 2.25rem; /* 150% */
   text-align: right;
   cursor: pointer;
   -moz-appearance: textfield;
@@ -173,32 +173,32 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 input[type=number]#billAmount {
   background-image: url("images/icon-dollar.svg");
   background-repeat: no-repeat;
-  background-size: 11px 17px;
-  background-position: 16px center;
-  padding-left: 27px;
+  background-size: 0.6875rem 1.0625rem;
+  background-position: 1rem center;
+  padding-left: calc(1rem + 0.6875rem);
 }
 input[type=number]#numberOfPeople {
   background-image: url("images/icon-person.svg");
   background-repeat: no-repeat;
-  background-size: 13px 16px;
-  background-position: 16px center;
-  padding-left: 29px;
+  background-size: 0.8125rem 1rem;
+  background-position: 1rem center;
+  padding-left: calc(1rem + 0.8125rem);
 }
 
 .tip-button {
   color: inherit;
   font-feature-settings: "liga" off, "clig" off;
-  /* Text Preset 3 - Space Mono Bold - 24px - 36px Line Height - 0px Line Spacing */
+  /* Text Preset 3 - Space Mono Bold - rem(24px) - rem(36px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 36px; /* 150% */
+  line-height: 2.25rem; /* 150% */
   color: #ffffff;
   text-align: center;
-  padding: 6px 0;
+  padding: 0.375rem 0;
   background-color: #00474b;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
 .tip-button:has(input[type=radio]:checked) {
   background-color: #26c2ae;
@@ -216,35 +216,35 @@ input[type=number]#numberOfPeople {
 .result-label small {
   color: inherit;
   font-feature-settings: "liga" off, "clig" off;
-  /* Text Preset 6 - Space Mono Bold - 13px - 19px Line Height - 0px Line Spacing */
+  /* Text Preset 6 - Space Mono Bold - rem(13px) - rem(19px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 19px; /* 146.154% */
+  line-height: 1.1875rem; /* 146.154% */
   color: #7f9d9f;
 }
 
 .result-value {
   color: inherit;
   font-feature-settings: "liga" off, "clig" off;
-  /* Text Preset 2 - Space Mono Bold - 32px - 47px Line Height - -0.67px Line Spacing */
+  /* Text Preset 2 - Space Mono Bold - rem(32px) - rem(47px) Line Height - rem(-0.67px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 32px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 47px; /* 146.875% */
-  letter-spacing: -0.67px;
+  line-height: 2.9375rem; /* 146.875% */
+  letter-spacing: -0.041875rem;
   line-height: normal;
   color: #26c2ae;
 }
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.0625rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -263,9 +263,9 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
   background-color: #9fe8df;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 30rem) {
   body {
-    padding: 50px 0;
+    padding: 3.125rem 0;
   }
   header {
     flex: 1;
@@ -281,39 +281,39 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
   }
   .calculator {
     flex: none;
-    gap: 40px;
+    gap: 2.5rem;
     box-sizing: content-box;
-    width: clamp(415px, 340px + 15.625vw, 460px);
-    padding: clamp(32px, 5.3333px + 5.5556vw, 48px) clamp(24px, -69.3333px + 19.4444vw, 80px);
-    border-radius: 25px;
+    width: clamp(25.9375rem, 21.25rem + 15.625vw, 28.75rem);
+    padding: clamp(2rem, 0.33333125rem + 5.5556vw, 3rem) clamp(1.5rem, -4.33333125rem + 19.4444vw, 5rem);
+    border-radius: 1.5625rem;
   }
   .calculator__controls {
     padding: 0;
-    gap: 24px;
+    gap: 1.5rem;
   }
   .calculator__tip-buttons {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .calculator__results {
-    padding: clamp(24px, -16px + 8.3333vw, 48px);
-    gap: 16px;
+    padding: clamp(1.5rem, -1rem + 8.3333vw, 3rem);
+    gap: 1rem;
   }
   .result-value {
     color: inherit;
     font-feature-settings: "liga" off, "clig" off;
-    /* Text Preset 1 - Space Mono Bold - 48px - 71px Line Height - -1px Line Spacing */
+    /* Text Preset 1 - Space Mono Bold - rem(48px) - rem(71px) Line Height - rem(-1px) Line Spacing */
     font-family: "Space Mono";
-    font-size: 48px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 71px; /* 147.917% */
-    letter-spacing: -1px;
+    line-height: 4.4375rem; /* 147.917% */
+    letter-spacing: -0.0625rem;
     color: #26c2ae;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
   body {
-    gap: 88px;
+    gap: 5.5rem;
   }
   header {
     flex: 1.2;
@@ -323,28 +323,28 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
     flex: 2;
   }
   .calculator {
-    width: 920px;
+    width: 57.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 48px;
-    padding: 32px 40px;
+    gap: 3rem;
+    padding: 2rem 2.5rem;
   }
   .calculator__controls {
     flex: 1;
-    gap: 40px;
-    padding: 16.5px 0;
+    gap: 2.5rem;
+    padding: 1.03125rem 0;
   }
   .calculator__results {
-    width: 413px;
+    width: 25.8125rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 24px;
-    padding: 40px;
+    gap: 1.5rem;
+    padding: 2.5rem;
   }
   .calculator__reset-btn {
     margin-top: auto;

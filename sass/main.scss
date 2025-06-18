@@ -2,7 +2,7 @@
 
 body {
     @include flex(column, $gap: $spacing-500);
-    padding-top: 50px;
+    padding-top: rem(50px);
     background-color: $colors-grey-200;
 }
 
@@ -11,7 +11,7 @@ header {
     @include flex(column, $align: center);
 
     img {
-        width: 87px;
+        width: rem(87px);
     }
 }
 
@@ -27,7 +27,7 @@ main {
     @include flex(column, center, $gap: $spacing-400);
     background-color: $colors-white;
     padding: $spacing-400 $spacing-300;
-    border-radius: 25px 25px 0 0;
+    border-radius: rem(25px) rem(25px) 0 0;
     @include text-preset-5;
     color: $colors-grey-500;
 
@@ -47,13 +47,13 @@ main {
         padding: $spacing-300;
         color: $colors-white;
         background-color: $colors-green-900;
-        border-radius: 15px;
+        border-radius: rem(15px);
     }
 
     &__reset-btn {
         background-color: $colors-green-400;
         text-transform: uppercase;
-        border-radius: 5px;
+        border-radius: rem(5px);
         @include text-preset-4;
         color: $colors-green-900;
         border: 0;
@@ -79,9 +79,9 @@ main {
 
 input[type="number"] {
     background-color: $colors-grey-50;
-    padding: 6px $spacing-200;
+    padding: rem(6px) $spacing-200;
     border: 0;
-    border-radius: 5px;
+    border-radius: rem(5px);
     @include text-preset-3;
     text-align: right;
     cursor: pointer;
@@ -108,18 +108,18 @@ input[type="number"] {
     &#billAmount {
         background-image: url("images/icon-dollar.svg");
         background-repeat: no-repeat;
-        background-size: 11px 17px;
+        background-size: rem(11px) rem(17px);
         background-position: $spacing-200 center;
-        padding-left: calc($spacing-200 + 11px);
+        padding-left: calc($spacing-200 + rem(11px));
     }
 
     // number of people input with person icon
     &#numberOfPeople {
         background-image: url("images/icon-person.svg");
         background-repeat: no-repeat;
-        background-size: 13px 16px;
+        background-size: rem(13px) rem(16px);
         background-position: $spacing-200 center;
-        padding-left: calc($spacing-200 + 13px);
+        padding-left: calc($spacing-200 + rem(13px));
     }
 }
 
@@ -127,9 +127,9 @@ input[type="number"] {
     @include text-preset-3;
     color: $colors-white;
     text-align: center;
-    padding: 6px 0;
+    padding: rem(6px) 0;
     background-color: $colors-green-900;
-    border-radius: 5px;
+    border-radius: rem(5px);
 
     &:has(input[type="radio"]:checked) {
         background-color: $colors-green-400;
@@ -157,10 +157,10 @@ input[type="number"] {
 // screen reader only - visually hides elements
 .sr-only {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: rem(1px);
+    height: rem(1px);
     padding: 0;
-    margin: -1px;
+    margin: rem(-1px);
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
@@ -180,9 +180,9 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
 }
 
 // tablet and small desktop styles
-@media (min-width: 480px) {
+@media (min-width: rem(480px)) {
     body {
-        padding: 50px 0;
+        padding: rem(50px) 0;
     }
 
     header {
@@ -199,9 +199,9 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
         flex: none;
         gap: $spacing-500;
         box-sizing: content-box;
-        width: clamp(415px, 340px + 15.625vw, 460px);
-        padding: clamp($spacing-400, 5.3333px + 5.5556vw, $spacing-600) clamp($spacing-300, -69.3333px + 19.4444vw, $spacing-1000);
-        border-radius: 25px;
+        width: clamp(rem(415px), rem(340px) + 15.625vw, rem(460px));
+        padding: clamp($spacing-400, rem(5.3333px) + 5.5556vw, $spacing-600) clamp($spacing-300, rem(-69.3333px) + 19.4444vw, $spacing-1000);
+        border-radius: rem(25px);
 
         &__controls {
             padding: 0;
@@ -213,7 +213,7 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
         }
 
         &__results {
-            padding: clamp($spacing-300, -16px + 8.3333vw, $spacing-600);
+            padding: clamp($spacing-300, rem(-16px) + 8.3333vw, $spacing-600);
             gap: $spacing-200;
         }
     }
@@ -224,9 +224,9 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: rem(1200px)) {
     body {
-        gap: 88px;
+        gap: rem(88px);
     }
 
     header {
@@ -238,7 +238,7 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
         flex: 2;
     }
     .calculator {
-        width: 920px;
+        width: rem(920px);
         box-sizing: border-box;
         @include flex(row, $gap: $spacing-600);
         padding: $spacing-400 $spacing-500;
@@ -246,11 +246,11 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
         &__controls {
             flex: 1;
             gap: $spacing-500;
-            padding: 16.5px 0;
+            padding: rem(16.5px) 0;
         }
 
         &__results {
-            width: 413px;
+            width: rem(413px);
             @include flex(column, $gap: $spacing-300);
             padding: $spacing-500;
         }

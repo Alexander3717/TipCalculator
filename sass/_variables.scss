@@ -18,87 +18,87 @@ $colors-grey-600: #3d6666;
 $colors-orange-400: #e17052;
 
 //spacings
-$spacing-0: 0px;
-$spacing-100: 8px;
-$spacing-200: 16px;
-$spacing-300: 24px;
-$spacing-400: 32px;
-$spacing-500: 40px;
-$spacing-600: 48px;
-$spacing-1000: 80px;
-$spacing-1200: 96px;
-$spacing-1500: 120px;
-$spacing-1600: 128px;
-$spacing-2000: 160px;
-$spacing-3000: 240px;
-$spacing-4000: 320px;
+$spacing-0: rem(0px);
+$spacing-100: rem(8px);
+$spacing-200: rem(16px);
+$spacing-300: rem(24px);
+$spacing-400: rem(32px);
+$spacing-500: rem(40px);
+$spacing-600: rem(48px);
+$spacing-1000: rem(80px);
+$spacing-1200: rem(96px);
+$spacing-1500: rem(120px);
+$spacing-1600: rem(128px);
+$spacing-2000: rem(160px);
+$spacing-3000: rem(240px);
+$spacing-4000: rem(320px);
 
 // text presets
 @mixin text-preset-1 {
   color: inherit;
   font-feature-settings: 'liga' off, 'clig' off;
 
-  /* Text Preset 1 - Space Mono Bold - 48px - 71px Line Height - -1px Line Spacing */
+  /* Text Preset 1 - Space Mono Bold - rem(48px) - rem(71px) Line Height - rem(-1px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 48px;
+  font-size: rem(48px);
   font-style: normal;
   font-weight: 700;
-  line-height: 71px; /* 147.917% */
-  letter-spacing: -1px;
+  line-height: rem(71px); /* 147.917% */
+  letter-spacing: rem(-1px);
 }
 @mixin text-preset-2 {
   color: inherit;
   font-feature-settings: 'liga' off, 'clig' off;
 
-  /* Text Preset 2 - Space Mono Bold - 32px - 47px Line Height - -0.67px Line Spacing */
+  /* Text Preset 2 - Space Mono Bold - rem(32px) - rem(47px) Line Height - rem(-0.67px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 32px;
+  font-size: rem(32px);
   font-style: normal;
   font-weight: 700;
-  line-height: 47px; /* 146.875% */
-  letter-spacing: -0.67px;
+  line-height: rem(47px); /* 146.875% */
+  letter-spacing: rem(-0.67px);
 }
 @mixin text-preset-3 {
   color: inherit;
   font-feature-settings: 'liga' off, 'clig' off;
 
-  /* Text Preset 3 - Space Mono Bold - 24px - 36px Line Height - 0px Line Spacing */
+  /* Text Preset 3 - Space Mono Bold - rem(24px) - rem(36px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 24px;
+  font-size: rem(24px);
   font-style: normal;
   font-weight: 700;
-  line-height: 36px; /* 150% */
+  line-height: rem(36px); /* 150% */
 }
 @mixin text-preset-4 {
   color: inherit;
   font-feature-settings: 'liga' off, 'clig' off;
 
-  /* Text Preset 4 - Space Mono Bold - 20px - 30px Line Height - 0px Line Spacing */
+  /* Text Preset 4 - Space Mono Bold - rem(20px) - rem(30px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 20px;
+  font-size: rem(20px);
   font-style: normal;
   font-weight: 700;
-  line-height: 30px; /* 150% */
+  line-height: rem(30px); /* 150% */
 }
 @mixin text-preset-5 {
   color: inherit;
   font-feature-settings: 'liga' off, 'clig' off;
 
-  /* Text Preset 5 - Space Mono Bold - 16px - 24px Line Height - 0px Line Spacing */
+  /* Text Preset 5 - Space Mono Bold - rem(16px) - rem(24px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 16px;
+  font-size: rem(16px);
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 150% */
+  line-height: rem(24px); /* 150% */
 }
 @mixin text-preset-6 {
   color: inherit;
   font-feature-settings: 'liga' off, 'clig' off;
 
-  /* Text Preset 6 - Space Mono Bold - 13px - 19px Line Height - 0px Line Spacing */
+  /* Text Preset 6 - Space Mono Bold - rem(13px) - rem(19px) Line Height - rem(0px) Line Spacing */
   font-family: "Space Mono";
-  font-size: 13px;
+  font-size: rem(13px);
   font-style: normal;
   font-weight: 700;
-  line-height: 19px; /* 146.154% */
+  line-height: rem(19px); /* 146.154% */
 }
