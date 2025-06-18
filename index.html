@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.svg" alt="Splitter logo">
+  </header>
+
+  <main>
+    <div class="calculator">
+      <form class="calculator__controls" novalidate>
+
+        <div class="input-group">
+          <div class="label-row">
+            <label for="billAmount">Bill</label>
+            <span class="error-message" id="billError"></span>
+          </div>
+          <input type="number" id="billAmount" name="billAmount" min="0.01" max="10000" step="any" placeholder="0" required>
+        </div>
+        
+        <div class="input-group">
+          <p class="label-heading" id="tipSelectionLabel">Select Tip %</p>
+          <div class="calculator__tip-buttons" role="radiogroup" aria-labelledby="tip-selection-label">
+            <label class="tip-button">
+              <input type="radio" name="tip" value="0.05" class="sr-only" required>
+              5%
+            </label>
+
+            <label class="tip-button">
+              <input type="radio" name="tip" value="0.10" class="sr-only">
+              10%
+            </label>
+
+            <label class="tip-button">
+              <input type="radio" name="tip" value="0.15" class="sr-only">
+              15%
+            </label>
+            
+            <label class="tip-button">
+              <input type="radio" name="tip" value="0.20" class="sr-only">
+              20%
+            </label>
+
+            <label class="tip-button">
+              <input type="radio" name="tip" value="0.50" class="sr-only">
+              50%
+            </label>
+
+            <div class="tip-button" id="customButton" tabindex="-1">
+              <label for="customRadio" id="customButtonLabel">Custom</label>
+              <input type="radio" name="tip" value="custom" class="sr-only" id="customRadio">
+              <!-- input box for entering custom tip -->
+              <div id="customTipWrapper" class="hidden">
+                <input type="number" id="customTip" min="0" max="99" aria-label="Custom tip percentage">
+                <span id="customTipSymbol">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="input-group">
+            <div class="label-row">
+              <label for="numberOfPeople">Number of People</label>
+              <span class="error-message" id="peopleError"></span>
+            </div>
+            <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" max="100" placeholder="0" required>              
+          </div>
+      </form>
+
+      <div class="calculator__results">
+        <div class="result-item">
+          <p class="result-label">Tip Amount <br> <small>/ person</small></p>
+          <span class="result-value" id="tipPerPerson">$0.00</span>
+        </div>
+        <div class="result-item">
+          <p class="result-label">Total <br> <small>/ person</small></p>
+          <span class="result-value" id="totalPerPerson">$0.00</span>
+        </div>
+
+        <button class="calculator__reset-btn" type="button" disabled>Reset</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

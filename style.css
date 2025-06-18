@@ -1,0 +1,432 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p, blockquote {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 40px;
+  padding-top: 50px;
+  background-color: #c5e4e7;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+header img {
+  width: 87px;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+}
+
+.calculator {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  background-color: #ffffff;
+  padding: 32px 24px;
+  border-radius: 25px 25px 0 0;
+  color: inherit;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Text Preset 5 - Space Mono Bold - 16px - 24px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+  color: #5e7a7d;
+}
+.calculator__controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 32px;
+  padding: 0 8px;
+}
+.calculator__tip-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.calculator__results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  padding: 24px;
+  color: #ffffff;
+  background-color: #00474b;
+  border-radius: 15px;
+}
+.calculator__reset-btn {
+  background-color: #26c2ae;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: inherit;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Text Preset 4 - Space Mono Bold - 20px - 30px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; /* 150% */
+  color: #00474b;
+  border: 0;
+  padding: 8px 16px;
+}
+.calculator__reset-btn:disabled {
+  background-color: #0d686d;
+  color: #085c61;
+}
+.calculator__reset-btn:not(:disabled):hover {
+  cursor: pointer;
+  background-color: #9fe8df;
+  color: #00474b;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  gap: 8px;
+}
+
+input[type=number] {
+  background-color: #f3f9fa;
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 5px;
+  color: inherit;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Text Preset 3 - Space Mono Bold - 24px - 36px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+  text-align: right;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+input[type=number]::placeholder {
+  color: #9ebbbd;
+}
+input[type=number]:focus-visible, input[type=number]:hover {
+  outline: 2px solid #26c2ae;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]#billAmount {
+  background-image: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-size: 11px 17px;
+  background-position: 16px center;
+  padding-left: 27px;
+}
+input[type=number]#numberOfPeople {
+  background-image: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-size: 13px 16px;
+  background-position: 16px center;
+  padding-left: 29px;
+}
+
+.tip-button {
+  color: inherit;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Text Preset 3 - Space Mono Bold - 24px - 36px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+  color: #ffffff;
+  text-align: center;
+  padding: 6px 0;
+  background-color: #00474b;
+  border-radius: 5px;
+}
+.tip-button:has(input[type=radio]:checked) {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+.result-label small {
+  color: inherit;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Text Preset 6 - Space Mono Bold - 13px - 19px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px; /* 146.154% */
+  color: #7f9d9f;
+}
+
+.result-value {
+  color: inherit;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Text Preset 2 - Space Mono Bold - 32px - 47px Line Height - -0.67px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 47px; /* 146.875% */
+  letter-spacing: -0.67px;
+  line-height: normal;
+  color: #26c2ae;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+button, .tip-button {
+  outline: none;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.tip-button:hover,
+button:focus-visible, .tip-button:has(input:focus-visible) {
+  cursor: pointer;
+  color: #085c61;
+  background-color: #9fe8df;
+}
+
+@media (min-width: 480px) {
+  body {
+    padding: 50px 0;
+  }
+  header {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  main {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+  }
+  .calculator {
+    flex: none;
+    gap: 40px;
+    box-sizing: content-box;
+    width: clamp(415px, 340px + 15.625vw, 460px);
+    padding: clamp(32px, 5.3333px + 5.5556vw, 48px) clamp(24px, -69.3333px + 19.4444vw, 80px);
+    border-radius: 25px;
+  }
+  .calculator__controls {
+    padding: 0;
+    gap: 24px;
+  }
+  .calculator__tip-buttons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .calculator__results {
+    padding: clamp(24px, -16px + 8.3333vw, 48px);
+    gap: 16px;
+  }
+  .result-value {
+    color: inherit;
+    font-feature-settings: "liga" off, "clig" off;
+    /* Text Preset 1 - Space Mono Bold - 48px - 71px Line Height - -1px Line Spacing */
+    font-family: "Space Mono";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 71px; /* 147.917% */
+    letter-spacing: -1px;
+    color: #26c2ae;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    gap: 88px;
+  }
+  header {
+    flex: 1.2;
+    justify-content: flex-end;
+  }
+  main {
+    flex: 2;
+  }
+  .calculator {
+    width: 920px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 48px;
+    padding: 32px 40px;
+  }
+  .calculator__controls {
+    flex: 1;
+    gap: 40px;
+    padding: 16.5px 0;
+  }
+  .calculator__results {
+    width: 413px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 24px;
+    padding: 40px;
+  }
+  .calculator__reset-btn {
+    margin-top: auto;
+  }
+}
+.label-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
+}
+
+.error-message {
+  color: #e17052;
+  text-align: right;
+}
+.error-message-left {
+  color: #e17052;
+  text-align: left;
+}
+
+#customButton {
+  position: relative;
+  overflow: hidden;
+  color: #547878;
+  background-color: #f3f9fa;
+}
+#customButton:hover, #customButton:hover * {
+  cursor: pointer;
+}
+#customButton:has(input[type=radio]:checked) {
+  outline: 2px solid #26c2ae;
+}
+
+#customTipWrapper {
+  background-color: #f3f9fa;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+#customButtonLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  z-index: 10;
+}
+
+#customTip {
+  padding: 0;
+  outline: none;
+  width: var(--dynamic-width, 1ch);
+}
+
+#customTipSymbol {
+  flex-shrink: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.active {
+  background-color: #26c2ae;
+  color: #085c61;
+}
+
+.invalid {
+  outline: solid 2px #e17052 !important;
+}
+
+/*# sourceMappingURL=style.css.map */

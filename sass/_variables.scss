@@ -1,0 +1,104 @@
+@use 'functions' as *;
+
+// colors
+$colors-black: #000000;
+$colors-white: #ffffff;
+$colors-green-200: #9fe8df;
+$colors-green-400: #26c2ae;
+$colors-green-750: #0d686d;
+$colors-green-800: #085c61;
+$colors-green-900: #00474b;
+$colors-grey-200: #c5e4e7;
+$colors-grey-300: #9ebbbd;
+$colors-grey-400: #7f9d9f;
+$colors-grey-50: #f3f9fa;
+$colors-grey-500: #5e7a7d;
+$colors-grey-550: #547878;
+$colors-grey-600: #3d6666;
+$colors-orange-400: #e17052;
+
+//spacings
+$spacing-0: 0px;
+$spacing-100: 8px;
+$spacing-200: 16px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-500: 40px;
+$spacing-600: 48px;
+$spacing-1000: 80px;
+$spacing-1200: 96px;
+$spacing-1500: 120px;
+$spacing-1600: 128px;
+$spacing-2000: 160px;
+$spacing-3000: 240px;
+$spacing-4000: 320px;
+
+// text presets
+@mixin text-preset-1 {
+  color: inherit;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Text Preset 1 - Space Mono Bold - 48px - 71px Line Height - -1px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 71px; /* 147.917% */
+  letter-spacing: -1px;
+}
+@mixin text-preset-2 {
+  color: inherit;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Text Preset 2 - Space Mono Bold - 32px - 47px Line Height - -0.67px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 47px; /* 146.875% */
+  letter-spacing: -0.67px;
+}
+@mixin text-preset-3 {
+  color: inherit;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Text Preset 3 - Space Mono Bold - 24px - 36px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+}
+@mixin text-preset-4 {
+  color: inherit;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Text Preset 4 - Space Mono Bold - 20px - 30px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; /* 150% */
+}
+@mixin text-preset-5 {
+  color: inherit;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Text Preset 5 - Space Mono Bold - 16px - 24px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+@mixin text-preset-6 {
+  color: inherit;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Text Preset 6 - Space Mono Bold - 13px - 19px Line Height - 0px Line Spacing */
+  font-family: "Space Mono";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px; /* 146.154% */
+}
