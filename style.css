@@ -175,14 +175,14 @@ input[type=number]#billAmount {
   background-repeat: no-repeat;
   background-size: 0.6875rem 1.0625rem;
   background-position: 1rem center;
-  padding-left: calc(1rem + 0.6875rem);
+  padding-left: 1.6875rem;
 }
 input[type=number]#numberOfPeople {
   background-image: url("images/icon-person.svg");
   background-repeat: no-repeat;
   background-size: 0.8125rem 1rem;
   background-position: 1rem center;
-  padding-left: calc(1rem + 0.8125rem);
+  padding-left: 1.8125rem;
 }
 
 .tip-button {
@@ -286,6 +286,7 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
     width: clamp(25.9375rem, 21.25rem + 15.625vw, 28.75rem);
     padding: clamp(2rem, 0.33333125rem + 5.5556vw, 3rem) clamp(1.5rem, -4.33333125rem + 19.4444vw, 5rem);
     border-radius: 1.5625rem;
+    box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
   }
   .calculator__controls {
     padding: 0;

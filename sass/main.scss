@@ -202,6 +202,7 @@ button:focus-visible, .tip-button:has(input:focus-visible) {
         width: clamp(rem(415px), rem(340px) + 15.625vw, rem(460px));
         padding: clamp($spacing-400, rem(5.3333px) + 5.5556vw, $spacing-600) clamp($spacing-300, rem(-69.3333px) + 19.4444vw, $spacing-1000);
         border-radius: rem(25px);
+        box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.20);
 
         &__controls {
             padding: 0;
