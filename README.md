@@ -28,10 +28,9 @@ Users should be able to:
 
 ![](./screenshot.png)
 
-
 ### Links
 
-- Solution URL: [View solution on Frontend Mentor](https://www.frontendmentor.io/solutions/)
+- Solution URL: [View solution on Frontend Mentor](https://www.frontendmentor.io/solutions/tip-calculator-made-in-vanilla-javascript-BTUR67ObpG)
 - Live Site URL: [View live site](https://alexander3717.github.io/TipCalculator/)
 
 ## My process
