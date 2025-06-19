@@ -112,7 +112,6 @@ function hideErrors() {
 }
 
 function updateResults() {
-    // console.log("updating");
     // if the form is in default state
     if (billInput.validity.valueMissing && 
         peopleInput.validity.valueMissing && 
@@ -178,24 +177,25 @@ function restrictInput(field, maxBeforeDot, allowDecimals = true, maxAfterDot = 
 
     // to control how many digits the user can type into the number, accounts for decimal numbers too
     field.addEventListener("input", (e) => {
-        let input = e.target.value;
-        console.log(input);
+        let input = e.target.value.split(".");
 
-        if (input.includes(".")) {
-            const parts = input.split(".");
+        if (input[0]?.length > maxBeforeDot) {
+            input[0] = input[0].slice(0, maxBeforeDot);
 
-            if (parts[0].length > maxBeforeDot) {
-                parts[0] = parts[0].slice(0, maxBeforeDot);
+            if (input[1]) {
+                e.target.value = input.join(".");
+            } else {
+                e.target.value = input[0];
             }
-            if (parts[1].length > maxAfterDot) {
-                parts[1] = parts[1].slice(0, maxAfterDot);
+        }
+        else if (input[1]?.length > maxAfterDot) {
+            input[1] = input[1].slice(0, maxAfterDot);
+            
+            if (input[0]) {
+                e.target.value = input.join(".");
+            } else {
+                e.target.value = "." + input[1];
             }
-
-            e.target.value = parts.join(".");
-
-        } else if (input.length > maxBeforeDot) {
-            input = input.slice(0, maxBeforeDot);
-            e.target.value = input;
         }
     });
 
@@ -220,20 +220,12 @@ function restrictInput(field, maxBeforeDot, allowDecimals = true, maxAfterDot = 
 }
 
 function cleanLeadingZeros(field) {
-    let lastkey;
-
-    field.addEventListener("keydown", (e) => lastkey = e.key);
-
     field.addEventListener("input", (e) => {
-            let input = e.target.value;
-            console.log(input);
+        let input = e.target.value;
 
-            // because of input type="number" quirks in Firefox
-            if (lastkey === "." || lastkey === ",") {
-                return;
-            }
-
-            e.target.value = input.replace(/^0+(?!\.|$)/, "");
+        if (/^0+(?!\.|$)/.test(input)) { // if there are leading zeros
+            e.target.value = input.replace(/^0+(?!\.|$)/, ""); // remove them
+        }
     });
 }
 
@@ -275,7 +267,6 @@ customTipInput.addEventListener("input", () => {
     customTipInput.style.setProperty("--dynamic-width", `${Math.max(length, 1)}ch`);
 });
 customTipInput.addEventListener("focusout", (e) => {
-    console.log(e.relatedTarget);
     // if the new focus is still inside the custom button, do nothing
     if (customTipButton.contains(e.relatedTarget)) {
         return;
@@ -304,7 +295,6 @@ customTipInput.addEventListener("focusout", (e) => {
 });
 
 resetButton.addEventListener("click", (e) => {
-    console.log("reset");
     // after its clicked, disable it (the user has nothing to reset anymore)
     e.target.disabled = true;
     form.reset();
