@@ -3,7 +3,6 @@
 const form = document.querySelector(".calculator__controls");
 const resetButton = document.querySelector(".calculator__reset-btn");
 const billInput = form.querySelector("#billAmount");
-const tipRadioButtons = document.querySelectorAll("input[name='tip']");
 const peopleInput = document.getElementById("numberOfPeople");
 // elements for calculated totals
 const tipPerPerson = document.getElementById("tipPerPerson");
@@ -57,7 +56,7 @@ function validate() {
         peopleError.textContent = "";
     }
 
-    let selectedTip = document.querySelector("input[name='tip']:checked");
+    const selectedTip = document.querySelector("input[name='tip']:checked");
     if (selectedTip?.value === "custom" && !customTipInput.validity.valid) {
         valid = false;
         customTipButton.classList.add("invalid");
@@ -83,11 +82,11 @@ function validate() {
 }
 
 function getCurrentData() {
-    let bill = parseFloat(billInput.value.trim());
-    let people = parseInt(peopleInput.value.trim());
+    const bill = parseFloat(billInput.value.trim());
+    const people = parseInt(peopleInput.value.trim());
     
     let tip;
-    let selectedTip = document.querySelector("input[name='tip']:checked");
+    const selectedTip = document.querySelector("input[name='tip']:checked");
     if (selectedTip.value === "custom") {
         tip = parseFloat(customTipInput.value.trim() / 100);
     } else {
@@ -126,7 +125,7 @@ function updateResults() {
         resetButton.disabled = false;
     }
 
-    let valid = validate();
+    const valid = validate();
 
     if (!valid) {
         tipPerPerson.textContent = "$0.00";
@@ -134,7 +133,7 @@ function updateResults() {
         return;
     } 
 
-    let data = getCurrentData();
+    const data = getCurrentData();
     calculate(...data);
 }
 
@@ -177,7 +176,7 @@ function restrictInput(field, maxBeforeDot, allowDecimals = true, maxAfterDot = 
 
     // to control how many digits the user can type into the number, accounts for decimal numbers too
     field.addEventListener("input", (e) => {
-        let input = e.target.value.split(".");
+        const input = e.target.value.split(".");
 
         if (input[0]?.length > maxBeforeDot) {
             input[0] = input[0].slice(0, maxBeforeDot);
@@ -221,7 +220,7 @@ function restrictInput(field, maxBeforeDot, allowDecimals = true, maxAfterDot = 
 
 function cleanLeadingZeros(field) {
     field.addEventListener("input", (e) => {
-        let input = e.target.value;
+        const input = e.target.value;
 
         if (/^0+(?!\.|$)/.test(input)) { // if there are leading zeros
             e.target.value = input.replace(/^0+(?!\.|$)/, ""); // remove them
@@ -239,6 +238,8 @@ function setupField(field, maxBeforeDot, allowDecimals = true, maxAfterDot = 2) 
 setupField(billInput, 4, true);
 setupField(peopleInput, 2, false);
 setupField(customTipInput, 2, false);
+
+form.addEventListener('submit', e => e.preventDefault());
 
 // updates the totals every time the calculator input changes
 form.addEventListener("input", updateResults);
@@ -258,7 +259,7 @@ form.addEventListener("change", (e) => {
 });
 
 // must be on the radio button because on label it didn't work
-customTipRadio.addEventListener("click", (e) => {
+customTipRadio.addEventListener("click", () => {
     customTipInput.focus();
 });
 // for styling purposes
